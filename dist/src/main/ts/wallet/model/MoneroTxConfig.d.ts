@@ -38,6 +38,8 @@ export default class MoneroTxConfig {
     sweepEachSubaddress: boolean;
     /** For sweep requests, key image of the output to sweep. */
     keyImage: string;
+    /** Arbitrary data to include in the transaction (optional). */
+    data: Uint8Array;
     /**
      * <p>Generic request to transfer funds from a wallet.</p>
      *
@@ -142,4 +144,16 @@ export default class MoneroTxConfig {
      * @param {string} keyImage is the key image hex of the output to sweep
      */
     setKeyImage(keyImage: any): this;
+    /**
+     * Get the key image hex of the output to sweep.
+     *
+     * return {string} is the key image hex of the output to sweep
+     */
+    getData(): Uint8Array;
+    /**
+     * Set the arbitrary data to include in the transaction
+     *
+     * @param {Uint8Array} data data to add to the transaction
+     */
+    setData(data: Uint8Array): this;
 }
